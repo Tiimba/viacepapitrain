@@ -2,6 +2,7 @@ package main
 
 import (
 	"encoding/json"
+	"fmt"
 	"io/ioutil"
 	"log"
 	"net/http"
@@ -38,10 +39,10 @@ func GetRequest(url string) Address {
 	return address
 }
 
-// func main() {
-// 	response := GetRequest("https://viacep.com.br/ws/13099160/json/")
-// 	fmt.Println(response)
-// }
+func main() {
+	response := GetRequest("https://viacep.com.br/ws/13099160/json/")
+	fmt.Println(response)
+}
 
 // function which return "geeks"
 func ReturnGeeks() string {
