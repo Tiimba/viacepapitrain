@@ -38,12 +38,3 @@ func GetRequest(url string) Address {
 	fmt.Println(address)
 	return address
 }
-
-func main() {
-	GetRequest("https://viacep.com.br/ws/13099160/json/")
-}
-
-// function which return "geeks"
-func ReturnGeeks() string {
-	return "geeks"
-}
