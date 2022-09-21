@@ -1,6 +1,7 @@
 package main
 
 import (
+	"os"
 	"testing"
 )
 
@@ -13,9 +14,9 @@ type viacepTests struct {
 func TestGetCorrect(t *testing.T) {
 
 	tt := viacepTests{
-		name:     "Get 13099160 info",
-		url:      "https://viacep.com.br/ws/13099160/json/",
-		expected: "Campinas",
+		name:     "Get " + os.Getenv("CORRECT_URL") + "info",
+		url:      os.Getenv("URL") + "/" + os.Getenv("TEST_CORRECT_URL") + "/" + os.Getenv("DATATYPE") + "/",
+		expected: os.Getenv("TEST_CORRECT_EXPECTED"),
 	}
 
 	if got := GetRequest(tt.url); got.Localidade != tt.expected {

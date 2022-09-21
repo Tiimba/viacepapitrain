@@ -6,6 +6,16 @@ on:
   pull_request:
     branches: [ "main" ]
 
+env:
+  
+  URL: https://viacep.com.br/ws/
+  DATATYPE: JSON
+  #Testing Envs
+  TEST_CORRECT_URL: 13099160
+  TEST_CORRECT_EXPECTED: Campinas
+  
+
+
 jobs:
 
   build:
