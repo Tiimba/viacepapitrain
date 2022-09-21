@@ -6,6 +6,7 @@ import (
 	"io/ioutil"
 	"log"
 	"net/http"
+	"os"
 )
 
 type Address struct {
@@ -39,11 +40,11 @@ func GetRequest(url string) Address {
 	return address
 }
 
-// func main() {
-// 	response := GetRequest("https://viacep.com.br/ws/" + os.Getenv("CEP") + "/json/")
-// 	fmt.Println(re)
+func main() {
+	response := GetRequest("https://viacep.com.br/ws/" + os.Getenv("CEP") + "/json/")
+	fmt.Println(re)
 
-// }
+}
 
 // function which return "geeks"
 func ReturnGeeks() string {
