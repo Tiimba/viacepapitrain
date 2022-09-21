@@ -1,4 +1,4 @@
-package main
+package cepai
 
 import (
 	"encoding/json"
