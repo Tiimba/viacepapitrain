@@ -15,8 +15,8 @@ func TestGetCorrect(t *testing.T) {
 
 	tt := viacepTests{
 		name:     "Get " + os.Getenv("CORRECT_URL") + "info",
-		url:      os.Getenv("URL") + os.Getenv("TEST_CORRECT_URL") + "/" + os.Getenv("DATATYPE") + "/",
-		expected: os.Getenv("TEST_CORRECT_EXPECTED"),
+		url:      os.Getenv("URL") + "13099160/json/",
+		expected: "Campinas",
 	}
 
 	if got := GetRequest(tt.url); got.Localidade != tt.expected {
