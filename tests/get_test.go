@@ -15,13 +15,15 @@ type viacepTests struct {
 func TestGetCorrect(t *testing.T) {
 
 	tt := viacepTests{
-		name:     "Get " + os.Getenv("CORRECT_URL") + "info",
+		name:     "Get Correct info value: '13099160'",
 		url:      os.Getenv("URL") + "13099160/json/",
 		expected: "Campinas",
 	}
 
 	if got := cepai.GetRequest(tt.url); got.Localidade != tt.expected {
 		t.Errorf("GetRequest(%s) = %s; want %s", tt.url, got.Localidade, tt.expected)
+	} else {
+		t.Logf("GetRequest(%s) = %s; want %s", tt.url, got.Localidade, tt.expected)
 	}
 }
 
