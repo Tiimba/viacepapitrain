@@ -9,7 +9,7 @@ on:
 env:
   
   URL: https://viacep.com.br/ws/
-  DATATYPE: JSON
+  DATATYPE: json
   #Testing Envs
   TEST_CORRECT_URL: 13099160
   TEST_CORRECT_EXPECTED: Campinas
