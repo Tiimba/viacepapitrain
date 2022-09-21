@@ -15,7 +15,7 @@ func TestGetCorrect(t *testing.T) {
 
 	tt := viacepTests{
 		name:     "Get " + os.Getenv("CORRECT_URL") + "info",
-		url:      os.Getenv("URL") + "/" + os.Getenv("TEST_CORRECT_URL") + "/" + os.Getenv("DATATYPE") + "/",
+		url:      os.Getenv("URL") + os.Getenv("TEST_CORRECT_URL") + "/" + os.Getenv("DATATYPE") + "/",
 		expected: os.Getenv("TEST_CORRECT_EXPECTED"),
 	}
 
