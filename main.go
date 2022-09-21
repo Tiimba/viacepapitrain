@@ -41,9 +41,7 @@ func GetRequest(url string) Address {
 }
 
 func main() {
-	response := GetRequest("https://viacep.com.br/ws/" + os.Getenv("CEP") + "/json/")
-	fmt.Println(response.Cep)
-
+	GetRequest("https://viacep.com.br/ws/" + os.Getenv("CEP") + "/json/")
 }
 
 // function which return "geeks"
