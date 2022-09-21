@@ -1,4 +1,4 @@
-package main
+package cepai_testes
 
 import (
 	"cepai"
@@ -12,28 +12,31 @@ type viacepTests struct {
 	expected string
 }
 
-func TestGetCorrect(t *testing.T) {
+func TestGet(t *testing.T) {
+	t.Run("Should Return Campinas", func(t *testing.T) {
+		tt := viacepTests{
+			url:      os.Getenv("URL") + "13099160/json/",
+			expected: "Campinas",
+		}
 
-	tt := viacepTests{
-		name:     "Get " + os.Getenv("CORRECT_URL") + "info",
-		url:      os.Getenv("URL") + "13099160/json/",
-		expected: "Campinas",
-	}
+		if got := cepai.GetRequest(tt.url); got.Localidade != tt.expected {
+			t.Errorf("GetRequest(%s) = %s; want %s", tt.url, got.Localidade, tt.expected)
+		} else {
+			t.Logf("GetRequest(%s) = %s; want %s", tt.url, got.Localidade, tt.expected)
+		}
+	})
 
-	if got := cepai.GetRequest(tt.url); got.Localidade != tt.expected {
-		t.Errorf("GetRequest(%s) = %s; want %s", tt.url, got.Localidade, tt.expected)
-	}
-}
+	t.Run("Should Return Empty", func(t *testing.T) {
+		tt := viacepTests{
+			url:      os.Getenv("URL") + "131099160/json/",
+			expected: "",
+		}
 
-func TestGetWrong(t *testing.T) {
+		if got := cepai.GetRequest(tt.url); got.Localidade != tt.expected {
+			t.Errorf("GetRequest(%s) = %s; want %s", tt.url, got.Localidade, tt.expected)
+		} else {
+			t.Logf("GetRequest(%s) = %s; want %s", tt.url, got.Localidade, tt.expected)
+		}
 
-	tt := viacepTests{
-		name:     "Get 89099160 Wrong/Nil info",
-		url:      "https://viacep.com.br/ws/89099160/json/",
-		expected: "",
-	}
-
-	if got := cepai.GetRequest(tt.url); got.Localidade != tt.expected {
-		t.Errorf("GetRequest(%s) = %s; want %s", tt.url, got.Localidade, tt.expected)
-	}
+	})
 }
