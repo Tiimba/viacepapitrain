@@ -1,6 +1,7 @@
 package main
 
 import (
+	"cepai"
 	"os"
 	"testing"
 )
@@ -19,7 +20,7 @@ func TestGetCorrect(t *testing.T) {
 		expected: "Campinas",
 	}
 
-	if got := GetRequest(tt.url); got.Localidade != tt.expected {
+	if got := cepai.GetRequest(tt.url); got.Localidade != tt.expected {
 		t.Errorf("GetRequest(%s) = %s; want %s", tt.url, got.Localidade, tt.expected)
 	}
 }
@@ -32,7 +33,7 @@ func TestGetWrong(t *testing.T) {
 		expected: "",
 	}
 
-	if got := GetRequest(tt.url); got.Localidade != tt.expected {
+	if got := cepai.GetRequest(tt.url); got.Localidade != tt.expected {
 		t.Errorf("GetRequest(%s) = %s; want %s", tt.url, got.Localidade, tt.expected)
 	}
 }
