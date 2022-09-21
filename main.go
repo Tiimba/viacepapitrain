@@ -42,7 +42,7 @@ func GetRequest(url string) Address {
 
 func main() {
 	response := GetRequest("https://viacep.com.br/ws/" + os.Getenv("CEP") + "/json/")
-	fmt.Println(re)
+	fmt.Println(response)
 
 }
 
