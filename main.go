@@ -35,14 +35,15 @@ func GetRequest(url string) Address {
 
 	var address Address
 	json.Unmarshal(body, &address)
-
+	fmt.Println(address)
 	return address
 }
 
-func main() {
-	response := GetRequest("https://viacep.com.br/ws/13099160/json/")
-	fmt.Println(response)
-}
+// func main() {
+// 	response := GetRequest("https://viacep.com.br/ws/" + os.Getenv("CEP") + "/json/")
+// 	fmt.Println(re)
+
+// }
 
 // function which return "geeks"
 func ReturnGeeks() string {

@@ -4,14 +4,7 @@ import (
 	"testing"
 )
 
-type viacepTests struct {
-	name     string
-	url      string
-	expected string
-}
-
-// test function
-func TestGet1(t *testing.T) {
+func TestGetCorrect(t *testing.T) {
 
 	tt := viacepTests{
 		name:     "Get 13099160 info",
