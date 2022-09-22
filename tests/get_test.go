@@ -1,7 +1,7 @@
 package cepai_testes
 
 import (
-	"cepai"
+	cepai "apicep/src"
 	"os"
 	"testing"
 )

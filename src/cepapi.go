@@ -28,7 +28,7 @@ func GetRequest(url string) Address {
 	}
 
 	body, err := ioutil.ReadAll(resp.Body)
-
+	fmt.Println(resp.StatusCode)
 	if err != nil {
 		log.Fatalln(err)
 	}
