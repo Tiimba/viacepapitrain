@@ -21,7 +21,7 @@ type Address struct {
 	Siafi       string `json:"siafi"`
 }
 
-func GetRequest(url string) Address {
+func GetRequest(url string) (Address, int) {
 	resp, err := http.Get(url)
 	if err != nil {
 		log.Fatalln(err)
@@ -36,5 +36,5 @@ func GetRequest(url string) Address {
 	var address Address
 	json.Unmarshal(body, &address)
 	fmt.Println(address)
-	return address
+	return address, resp.StatusCode
 }
